@@ -17,15 +17,13 @@ public class Evaluator
         if (numList.get(i) < numList.get(0) && userInput.equals("L"))
         {   
             result = "Correct";
-            System.out.println(result);
 
             return result;
         }
 
-        else if (numList.get(i) < numList.get(0) && userInput.equals("H"))
+        else if (numList.get(i) < numList.get(0) && !userInput.equals("L"))
         {
             result = "Wrong";
-            System.out.println(result);
 
             return result;
         }
@@ -33,15 +31,27 @@ public class Evaluator
         else if (numList.get(i) > numList.get(0) && userInput.equals("H"))
         {
             result = "Correct";
-            System.out.println(result);
 
             return result;
         }
 
-        else if (numList.get(i) > numList.get(0) && userInput.equals("L"))
+        else if (numList.get(i) > numList.get(0) && !userInput.equals("H"))
         {
             result = "Wrong";
-            System.out.println(result);
+
+            return result;
+        }
+
+        else if (numList.get(i) == numList.get(0) && userInput.equals("S"))
+        {
+            result = "Correct";
+
+            return result;
+        }
+
+        else if (numList.get(i) == numList.get(0) && !userInput.equals("S"))
+        {
+            result = "Wrong";
 
             return result;
         }
@@ -49,14 +59,6 @@ public class Evaluator
         {
             return null;
         }
-    }
-
-    public static List<Integer> Compare(List<Integer> numList)
-    {   
-        List<Integer>compareResults = new ArrayList<>();
-
-        
-        return compareResults;
     }
     
 }
