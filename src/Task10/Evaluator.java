@@ -57,7 +57,8 @@ public class Evaluator
         }
         else
         {
-            return null;
+            // return null; // avoid return null
+            return "invalid";
         }
     }
     
