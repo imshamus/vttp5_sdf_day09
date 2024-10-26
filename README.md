@@ -19,3 +19,6 @@ java -jar day09.jar
 
 outside bin is
 java -jar bin/day09.jar
+
+javac -d classes --source-path . src/Task9/*.java
+java -cp classes Task9.App
