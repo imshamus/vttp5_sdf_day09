@@ -55,13 +55,14 @@ public class HangmanMain {
                 try (Reader reader = new FileReader(f);
                 BufferedReader br = new BufferedReader(reader);
                 ) {
-                    String line = br.readLine();
+                    String line = br.readLine();;
 
                     while(line != null) // end of file
                     {
                         System.out.println(line);
+                        line = br.readLine();
                     }
-                    
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
