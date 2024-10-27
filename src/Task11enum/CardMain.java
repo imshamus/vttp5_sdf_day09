@@ -1,10 +1,10 @@
-package Task11;
+package Task11enum;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class App {
+public class CardMain {
 
     public static void main(String[] args) {
         
@@ -21,13 +21,13 @@ public class App {
             }
         }
 
-        // System.out.println(deck);
+        // System.out.println(deck); // Print deck in list format
 
-        System.out.println("Normal deck: ");
-        for (Card c : deck)
-        {
-            System.out.println(c);
-        }
+        // System.out.println("Normal deck: "); // Print deck line by line
+        // for (Card c : deck)
+        // {
+        //     System.out.println(c);
+        // }
 
         Collections.shuffle(deck);
         

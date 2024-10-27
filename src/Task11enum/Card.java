@@ -1,4 +1,4 @@
-package Task11;
+package Task11enum;
 
 public class Card {
 

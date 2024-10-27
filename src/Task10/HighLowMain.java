@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class App 
+public class HighLowMain 
 {
     public static void main(String[] args) {
 

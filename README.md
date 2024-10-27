@@ -22,3 +22,7 @@ java -jar bin/day09.jar
 
 javac -d classes --source-path . src/Task10/*.java
 java -cp classes Task10.App
+
+javac -d classes --source-path . src/Task11/*.java
+java -cp classes Task11.CardMain
+
