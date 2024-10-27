@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class HangmanMain {
     public static void main(String[] args) 
@@ -55,12 +56,27 @@ public class HangmanMain {
                 try (Reader reader = new FileReader(f);
                 BufferedReader br = new BufferedReader(reader);
                 ) {
-                    String line = br.readLine();;
+                    /* // Read lines 1
+                    String line = br.readLine();
 
-                    while(line != null) // end of file
+                    while (line != null)
                     {
                         System.out.println(line);
                         line = br.readLine();
+                    } */
+
+                    /*  // Read lines 2
+                    List<String> lines = Files.readAllLines(p); // read all lines into a list.
+                    for(String l : lines)
+                    {
+                        System.out.println(l);
+                    } */
+
+                    // Read lines 3
+                    String line;    
+                    while((line = br.readLine()) != null) // read each line until end of file which returns null
+                    {
+                        System.out.println(line);
                     }
 
                 } catch (IOException e) {
@@ -103,4 +119,9 @@ public class HangmanMain {
         }
     }
     
+    public static void genRand(File f)
+    {
+        Random rand = new rand;
+        
+    }
 }
