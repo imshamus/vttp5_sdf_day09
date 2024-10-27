@@ -38,6 +38,7 @@ public class CardMain {
                 System.out.println("b" + bankerHand); // For Testing
                 
                 // INSTANT WINS
+
                 // if player 10 || J || Q || K && A, player win with BJ
                 if (((playerHand.get(0).startsWith("Ten")   || 
                     playerHand.get(0).startsWith("Jack")    || 
@@ -133,13 +134,14 @@ public class CardMain {
 
                     if (playerPoints > 21)
                     {
-                        System.out.println("Banker's turn.");
+                        System.out.println("Player bust, ending turn...");
+                        System.out.println();
                         break;
                     }
                 }
 
-                // if player > 16 but < 21
-                while (playerPoints > 15 && playerPoints < 21)
+                // if player >= 16 but < 21
+                while (playerPoints >= 16 && playerPoints < 21)
                 {   
                     System.out.println("Would player like to draw a card? (Y/N)");
                     userInput = cons.readLine(">>> ").toLowerCase();
@@ -151,7 +153,8 @@ public class CardMain {
 
                         if (playerPoints > 21)
                         {
-                            System.out.println("Banker's turn.");
+                            System.out.println("Player bust, ending turn...");
+                            System.out.println();
                             break;
                         }
                     }
@@ -165,10 +168,30 @@ public class CardMain {
                     {
                         System.out.println("Please enter only 'Y' or 'N'. ");
                     }
-
                 }
 
+                // Banker
+                System.out.println("Banker's turn.");
+                System.out.println();
+                int bankerPoints = PointsCalc.score(bankerHand);
 
+                // if banker < 16, banker must draw
+                while (bankerPoints < 16)
+                {
+                    System.out.println("Banker must draw a card.");
+                    System.out.println();
+                    bankerHand.add(deck.remove(0)); // Draw top card to player's Hand, remove it from deck
+                    bankerPoints = PointsCalc.score(bankerHand);
+
+                    if (bankerPoints > 21)
+                    {
+                        System.out.println("Banker bust, ending turn...");
+                        System.out.println();
+                        break;
+                    }
+                }
+
+                PointsCalc.compareResults(playerPoints, bankerPoints);
 
                 restart = restart();
 
